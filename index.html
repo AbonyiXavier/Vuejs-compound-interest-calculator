@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <div class="container">
+        <form id="form">
+          <h1>Compound Interest Calculator</h1>
+          <p>
+            <label>Principal</label>
+            <input
+              v-model="principal"
+              type="number"
+              placeholder="Principal Amount"
+              name="principal"
+              id="principal"
+              required
+            />
+          </p>
+          <p>
+            <label>Annual Rate</label>
+            <input
+              v-model="rate"
+              type="number"
+              placeholder="Annual Rate"
+              id="rate"
+              name="rate"
+              required
+            />
+          </p>
+          <p>
+            <label>N(compounds per year)</label>
+            <input
+              v-model="n"
+              type="number"
+              placeholder="N(compounds per year)"
+              id="number"
+              name="number"
+              required
+            />
+          </p>
+          <p>
+            <label>Time(years)</label>
+            <input
+              v-model="time"
+              type="number"
+              placeholder="Time(years)"
+              name="time"
+              id="time"
+              required
+            />
+          </p>
+          <div>
+            <button name="submit" type="submit" v-on:click="reset">
+              Reset
+            </button>
+          </div>
+          <div id="output">
+            compound Interest: #{{ compoundInterest() }}
+          </div>
+          <p class="copyright">
+            Designed by
+            <a href="http://twitter.com/abonyi_xavier" target=" _blank"
+              >Xavier</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
